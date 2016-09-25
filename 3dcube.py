@@ -188,7 +188,13 @@ while not done:
 
     for i in order:
         try:pygame.draw.polygon(screen, face_color[i], face_list[i])
-        except:pass    
+        except:pass
+
+    font = pygame.font.SysFont('Calibri', 20, True, False)
+    text = font.render("WASD per muoversi, E-Q per volare su-giù, mouse per guardare intorno",True,BLACK)
+    text_w = text.get_width()
+    text_h = text.get_height()
+    screen.blit(text, [XSIZE-text_w-10,YSIZE-text_h-20])
         
 
     key = pygame.key.get_pressed()
