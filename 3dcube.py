@@ -112,6 +112,11 @@ clock = pygame.time.Clock()
 
 done = False
 
+font = pygame.font.SysFont('Calibri', 20, True, False)
+text = font.render("WASD per muoversi, E-Q per volare su-giù, mouse per guardare intorno",True,BLACK)
+text_w = text.get_width()
+text_h = text.get_height()
+
 while not done:
     for event in pygame.event.get():
         camera.mouse_control(event)
@@ -190,10 +195,7 @@ while not done:
         try:pygame.draw.polygon(screen, face_color[i], face_list[i])
         except:pass
 
-    font = pygame.font.SysFont('Calibri', 20, True, False)
-    text = font.render("WASD per muoversi, E-Q per volare su-giù, mouse per guardare intorno",True,BLACK)
-    text_w = text.get_width()
-    text_h = text.get_height()
+
     screen.blit(text, [XSIZE-text_w-10,YSIZE-text_h-20])
         
 
